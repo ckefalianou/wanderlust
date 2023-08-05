@@ -1,0 +1,32 @@
+@import '@Theme/colors.scss';
+
+.icon {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    span {
+        display: block;
+        height: 18px;
+        width: 3px;
+        background: $darkGray;
+        position: absolute;
+
+        &:first-child {
+            transform: rotate(-45deg);
+            top: 0;
+            left: 0;
+            transform-origin: top left;
+        }
+
+        &:last-child {
+            transform: rotate(45deg);
+            top: 0;
+            right: 0;
+            transform-origin: top right;
+        }
+
+    }
+}

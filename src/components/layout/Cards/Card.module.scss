@@ -1,0 +1,39 @@
+@import '@Theme/colors.scss';
+
+.card {
+    background: $mediumGray;
+    padding: 10px 25px 10px 10px;
+    border-radius: 5px;
+    position: relative;
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+
+    &:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+    }
+
+    h4 {
+        color: $white;
+        font-weight: 500;
+    }
+
+    .country {
+        color: $white;
+        font-size: 14px;
+        opacity: .7;
+    }
+
+    .icons {
+        box-sizing: border-box;
+        position: absolute;
+        padding: 5px 5px 5px 0;
+        top: 0;
+        right: 0;
+        height: 100%;
+        justify-content: center;
+    }
+}

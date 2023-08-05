@@ -1,0 +1,25 @@
+@import '@Theme/colors.scss';
+
+.place {
+    min-width: 180px;
+    max-width: 180px;
+    height: 200px;
+    background: $lightGray;
+    padding: 20px 10px;
+    color: $white;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+    transition: all .2s ease;
+
+    &:hover {
+        background: $orange;
+        transition: all .2s ease;
+    }
+
+    .placeInner {
+        height: 100%;
+        justify-content: end;
+        gap: 5px;
+    }
+}
