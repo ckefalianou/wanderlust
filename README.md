@@ -9,7 +9,7 @@ Looking for the perfect destination? Wanderlust has you covered! Drop your pin a
 
 Visit: [Wanderlust](https://ckefalianou.gr/projects/wanderlust/)
 
-_This little project is Work In Progres, so it works only on Desktop for now, using Free APIs_
+_This little project is Work In Progress, so it works only on Desktop for now, using Free APIs_
 
 Thank you for reviewing my work! 😊
 
