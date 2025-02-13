@@ -9,7 +9,7 @@ Looking for the perfect destination? Wanderlust has you covered! Drop your pin a
 
 Visit: [Wanderlust](https://ckefalianou.gr/projects/wanderlust/)
 
-_this little project is Work In Progres, so it works only on Desktop for now using Free APIs_
+_This little project is Work In Progres, so it works only on Desktop for now, using Free APIs_
 
 Thank you for reviewing my work! 😊
 
@@ -28,11 +28,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
