@@ -1,4 +1,4 @@
-@import '@Theme/colors.scss';
+@use '@Theme/colors.scss' as *;
 
 .icon {
     width: 15px;

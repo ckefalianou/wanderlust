@@ -1,22 +1,21 @@
 <template>
-    <Column :class="style.places">
+    <div :class="style.places">
         <h1>Discover Places in {{ data.city }}, {{ data.country }}</h1> 
         <template v-for="item in placesConstants" :key="item.key" >
             <template v-if="places?.[item.key]?.length > 0">
-                <Column :class="style.placesCarousel">
+                <div :class="style.placesCarousel">
                     <h2>{{ item.title }}</h2>
                     <Carousel>
                         <Place :id="place.properties.place_id" v-for="place, index in places[item.key]" :key="`tourirm-${index}`" :data="place" />
                     </Carousel>
-                </Column>
+                </div>
             </template>
         </template>
-    </Column>
+    </div>
 </template>
 
 <script setup>
 import Carousel from '@UI/Carousel/Main.vue';
-import Column from '@UI/Column/Main.vue';
 import Place from './Place.vue';
 import { defineProps, computed, ref, watch } from 'vue';
 import axios from 'axios';
@@ -47,10 +46,20 @@ const accommodationApiUrl = computed ( () => `${commonApi.value}&categories=acco
 
 const getPlaces = () => {
     places.value = {};
-    axios.get(tourismApiUrl.value).then( response => { 
+    
+    axios
+    .get(tourismApiUrl.value)
+    .then( response => { 
         places.value.tourism = response.data.features 
-    }).catch( error => console.log(error) );
-    axios.get(accommodationApiUrl.value).then( response => { places.value.accommodation = response.data.features }).catch( error => console.log(error) );
+    })
+    .catch( error => console.log(error) );
+    
+    axios
+    .get(accommodationApiUrl.value)
+    .then( response => { 
+        places.value.accommodation = response.data.features 
+    })
+    .catch( error => console.log(error) );
 }; 
 
 getPlaces();

@@ -1,20 +1,18 @@
 <template>
-<Column :class="style.carouselWrapper">
-    <Row :class="style.carousel">
-        <Row :class="style.carouselInner" :style="{transform: `translateX(-${currentElPos}px)` }">
+<div :class="style.carouselWrapper">
+    <div :class="style.carousel">
+        <div :class="style.carouselInner" :style="{transform: `translateX(-${currentElPos}px)` }">
             <slot />
-        </Row>
-    </Row>
-    <Row :class="style.arrows">
+        </div>
+    </div>
+    <div :class="style.arrows">
         <div @click="handleArrows('previous')">{{ '<' }}</div>
         <div  @click="handleArrows('next')">{{ '>' }}</div>
-    </Row>
-</Column>
+    </div>
+</div>
 </template>
 <script setup>
 import { useSlots, computed, ref } from 'vue';
-import Row from '@UI/Row/Main.vue';
-import Column from '@UI/Column/Main.vue';
 import style from './Main.module.scss';
 
 const slots = useSlots();

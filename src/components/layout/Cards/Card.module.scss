@@ -1,4 +1,4 @@
-@import '@Theme/colors.scss';
+@use '@Theme/colors.scss' as *;
 
 .card {
     background: $mediumGray;
@@ -9,6 +9,8 @@
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
+    display: flex;
+    flex-direction: column;
 
     &:active {
         cursor: grabbing;

@@ -1,8 +1,8 @@
 <template>
     <li :class="style.card">
-        <Column :class="style.icons">
+        <div :class="style.icons">
             <Close @click.stop="handleCloseButtonClick"/>
-        </Column>
+        </div>
         <h4>{{ data.city }}</h4>
         <div :class="style.country">{{ data.country }}</div>
     </li>
@@ -11,7 +11,6 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue';
 import Close from '@UI/Icons/Close.vue';
-import Column from '@UI/Column/Main.vue';
 import style from './Card.module.scss';
 
 const emit = defineEmits('closeButtonClick');

@@ -4,4 +4,6 @@
     margin: 0;
     gap: 10px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }

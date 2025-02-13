@@ -7,6 +7,6 @@ import HomePage from '@Pages/HomePage.vue';
 </script>
 
 <style lang="scss">
-@import '@Theme/main.scss';
+@use '@Theme/main.scss' as *;
 
 </style>

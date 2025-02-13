@@ -1,5 +1,5 @@
 <template>
-    <Column :class="style.sideMenu">
+    <div :class="style.sideMenu">
         <div :class="style.logoWrapper">
             <Logo />
         </div>
@@ -21,10 +21,10 @@
             The floor is yours! <br><br>
             Pin all the places you want to visit!!
         </div>
-    </Column>
+    </div>
     <Teleport to="#modal" v-if="isMounted">
         <Transition name="slide" mode="out-in">
-            <SlideIn v-if="isPlacesModalOpen" @closeButtonClick="handleSlideInClose">
+            <SlideIn v-if="isPlacesModalOpen" @slideInCloseButtonClick="handleSlideInClose">
                 <Places :data="mapStore.cards[activeCardData]"/>
             </SlideIn>
         </Transition>
@@ -42,16 +42,17 @@ import Logo from '@UI/Logo/Main.vue';
 import style from './Main.module.scss';
 import Cards from '@Layout/Cards/Main.vue';
 import Card from '@Layout/Cards/Card.vue';
-import Column from '@UI/Column/Main.vue';
 import SlideIn from '@UI/SlideIn/Main.vue';
 import Places from '@Layout/Places/Main.vue';
-import { reactive, toRaw, ref, onMounted } from 'vue';
+import { reactive, toRaw, ref, onMounted, defineEmits } from 'vue';
 import { useMapStore } from '@Store/mapStore.js';
 
 const mapStore = useMapStore();
 const isMounted = ref(false);
 const isPlacesModalOpen = ref(false);
 const activeCardData = ref(null);
+
+const emit = defineEmits(['closeButtonClick']);
 
 const dragData = reactive({
     itemIndex: null,
@@ -84,6 +85,7 @@ const togglePlacesModal = (cardIndex) => {
 const handleSlideInClose = () => {
     isPlacesModalOpen.value = false;
     activeCardData.value = null;
+    emit('closeButtonClick');
 };
 
 onMounted( () => {

@@ -1,4 +1,4 @@
-@import '@Theme/colors.scss';
+@use '@Theme/colors.scss' as *;
 
 .sideMenu {
     background: $darkGray;
@@ -8,6 +8,8 @@
     gap: 30px;
     overflow-y: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .logoWrapper {

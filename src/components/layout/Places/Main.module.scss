@@ -1,7 +1,11 @@
 .places {
     gap: 50px;
+    display: flex;
+    flex-direction: column;
 
     .placesCarousel {
         gap: 30px;
+        display: flex;
+        flex-direction: column;
     }
 }

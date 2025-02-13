@@ -71,7 +71,7 @@ navigator.geolocation.getCurrentPosition( position => {
 
         markers.value[id] = L.marker([lat,lng], {icon: icon,  id: id}).addTo(map.value);
 
-        axios.get(`https://api.bigdatacloud.net/data/reverse-geocode?latitude=${e.latlng.lat}&longitude=${e.latlng.lng}&key=bdc_2f3f4b0baf9d40e9af51a04bd7d74588`)
+        axios.get(`https://api.bigdatacloud.net/data/reverse-geocode?latitude=${e.latlng.lat}&longitude=${e.latlng.lng}&key=bdc_aa675a4b480c41ee8bca959be900473c`)
         .then(res => { 
             let data = { 
                 id: id,

@@ -10,10 +10,10 @@ import style from './Main.module.scss';
 import Close from '@UI/Icons/Close.vue';
 import { defineEmits } from 'vue';
 
-const emit = defineEmits('closeButtonClick');
+const emit = defineEmits('slideInCloseButtonClick');
 
 const handleCloseButtonClick = () => {
-    emit('closeButtonClick');
+    emit('slideInCloseButtonClick');
 }
 </script>
 

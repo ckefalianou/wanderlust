@@ -1,11 +1,10 @@
 <template>
-    <Column as="ul" :class="style.cards">
+    <ul :class="style.cards">
         <slot />
-    </Column>
+    </ul>
 </template>
 
 <script setup>
-import Column from '@UI/Column/Main.vue';
 import style from './Main.module.scss';
 </script>
 
