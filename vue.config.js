@@ -1,8 +1,19 @@
 const { defineConfig } = require('@vue/cli-service');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  outputDir: './dist',
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+          @use "@Theme/main.scss" as *;
+        `
+      }
+    }
+  },
   configureWebpack: {
     resolve: {
         alias: {
@@ -16,5 +27,10 @@ module.exports = defineConfig({
             '@Store': path.resolve(__dirname, 'src/store/'),  
         }
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
+      })
+    ],
   },
 })
