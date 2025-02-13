@@ -1,7 +1,7 @@
 # Wanderlust
-* Travel mood – check
-* Paid time off – check
-* Luggage – check
+* Travel mood ✅
+* Paid time off ✅
+* Luggage ✅
 
 Okay… so, where are we heading?
 
